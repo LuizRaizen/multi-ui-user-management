@@ -1,0 +1,139 @@
+#: kivy 2.2.0
+
+<Titulo@Label>:
+    size_hint_y: None
+    height: "60dp"
+    text_size: self.size
+    halign: "center"
+    valign: "top"
+    font_size: "32dp"
+
+<Rotulo@Label>:
+    text_size: self.size
+    size_hint: 1, None
+    height: "40dp"
+    halign: "left"
+    valign: "center"
+
+<Formulario>:
+    multiline: False
+    size_hint_y: None
+    height: "30dp"
+
+<Botao@Button>
+    size_hint: 1, None
+    height: "60dp"
+    font_size: "22dp"
+    background_color: 0, .8, 0, 1
+
+<LembrarMe@BoxLayout>:
+    CheckBox:
+        id: check
+        size_hint: .2, 1
+    Label:
+        text: "Lembrar de mim"
+        text_size: self.size
+        halign: "left"
+        valign: "center"
+
+<Link@ButtonBehavior+Label>:
+    color: 0, .5, 1, 1
+
+<TelaDeLogin>:
+    id: tela_login
+    orientation: "vertical"
+    size_hint: None, None
+    size: 300, 500
+    pos_hint: {"center_x": .5, "center_y": .5}
+    Titulo:
+        text: "Fazer Login"
+    Rotulo:
+        text: "Nome de usuário / E-mail:"
+    Formulario:
+        id: inp_login_nome_usuario_email
+        screen: "tela_login"
+        hint_text: "Ex.: nomedeusuario"
+        root: tela_login
+        focus_next: inp_login_senha
+        keyboard_on_key_down: self.login_pressionou_tab_enter
+    Rotulo:
+        text: "Senha:"
+    Formulario:
+        id: inp_login_senha
+        screen: "tela_login"
+        markup: True
+        hint_text: "Ex.: 12345678"
+        password: True
+        root: tela_login
+        focus_next: inp_login_nome_usuario_email
+        keyboard_on_key_down: self.login_pressionou_tab_enter
+    LembrarMe:
+        id: chk_lembrar_me
+    Botao:
+        id: btn_entrar
+        text: "Entrar"
+        on_release: tela_login.clique_entrar(inp_login_nome_usuario_email, inp_login_senha)
+    Link:
+        id: link_ir_tela_cadastro
+        text: "Você ainda não tem uma conta?"
+        on_release: root.parent.mostrar_tela_cadastro()
+        
+<TelaDeCadastro>:
+    id: tela_cadastro
+    orientation: "vertical"
+    size_hint: None, None
+    size: 300, 500
+    pos_hint: {"center_x": .5, "center_y": .5}
+    Titulo:
+        text: "Criar Usuário"
+    Rotulo:
+        text: "Nome de usuário:"
+    Formulario:
+        id: inp_cadastro_nome_usuario
+        hint_text: "Ex.: nomedeusuario"
+        root: tela_cadastro
+        focus_next: inp_cadastro_email
+        forms: [inp_cadastro_nome_usuario, inp_cadastro_email, inp_cadastro_senha, inp_cadastro_confirmar_senha]
+        keyboard_on_key_down: self.cadastro_pressionou_tab_enter
+    Rotulo:
+        text: "E-mail:"
+    Formulario:
+        id: inp_cadastro_email
+        hint_text: "Ex.: meuemail@email.com"
+        root: tela_cadastro
+        focus_next: inp_cadastro_senha
+        forms: [inp_cadastro_nome_usuario, inp_cadastro_email, inp_cadastro_senha, inp_cadastro_confirmar_senha]
+        keyboard_on_key_down: self.cadastro_pressionou_tab_enter
+    Rotulo:
+        text: "Senha:"
+    Formulario:
+        markup: True
+        id: inp_cadastro_senha
+        hint_text: "Ex.: 12345678"
+        password: True
+        root: tela_cadastro
+        focus_next: inp_cadastro_confirmar_senha
+        forms: [inp_cadastro_nome_usuario, inp_cadastro_email, inp_cadastro_senha, inp_cadastro_confirmar_senha]
+        keyboard_on_key_down: self.cadastro_pressionou_tab_enter
+    Rotulo:
+        text: "Confirmar senha:"
+    Formulario:
+        markup: True
+        id: inp_cadastro_confirmar_senha
+        hint_text: "Ex.: 12345678"
+        password: True
+        root: tela_cadastro
+        focus_next: inp_cadastro_nome_usuario
+        forms: [inp_cadastro_nome_usuario, inp_cadastro_email, inp_cadastro_senha, inp_cadastro_confirmar_senha]
+        keyboard_on_key_down: self.cadastro_pressionou_tab_enter
+    BoxLayout:
+        size_hint_y: None
+        height: "100dp"
+        Botao:
+            id: "btn_cadastrar" 
+            text: "Cadastrar"
+            on_release: tela_cadastro.clique_cadastrar(inp_cadastro_nome_usuario, inp_cadastro_email, inp_cadastro_senha, inp_cadastro_confirmar_senha)
+    Link:
+        id: link_ir_tela_login
+        text: "Você já tem uma conta?"
+        on_release: root.parent.mostrar_tela_login()
