@@ -46,6 +46,7 @@ Funcionalidades Principais
 Padrões Arquiteturais e de Projeto
 
 O projeto segue os princípios da arquitetura MVC (Model-View-Controller), separando a lógica de controle, a interface do usuário e o acesso ao banco de dados. Além disso, utiliza padrões de projeto como Factory, Singleton e Observer para garantir uma estrutura organizada e modular.
+
 Requisitos e Execução
 
 O projeto requer Python 3.x e as bibliotecas especificadas no arquivo requirements.txt. Para executar o projeto, execute o seguinte comando:
@@ -59,6 +60,7 @@ Este projeto de demonstração de Cadastro e Login de Usuários Multiinterface e
 Dependências do Projeto
 
 Para executar o projeto de Cadastro e Login de Usuários Multiinterface, é necessário garantir que você tenha as dependências corretas instaladas. O projeto foi desenvolvido utilizando Python 3.x e faz uso de bibliotecas específicas para cada uma das interfaces gráficas. Você pode instalar as dependências usando o arquivo requirements.txt fornecido.
+kl
 Instalação das Dependências
 
 Abra um terminal e navegue até a pasta raiz do projeto cadastro_login, onde o arquivo requirements.txt está localizado. Em seguida, execute o seguinte comando para instalar as dependências:
@@ -80,7 +82,8 @@ A interface Kivy é construída utilizando a biblioteca Kivy, que é uma estrutu
 
 python app.py
 
-A interface Kivy oferece uma experiência moderna e intuitiva, com controles de toque e suporte a gestos. A tela inicial apresenta opções claras para fazer login ou se cadastrar. Os campos de entrada são facilmente acessíveis e o sistema de lembrete de usuário é integrado para maior comodidade.
+A interface Kivy oferece uma experiência moderna e intuitiva, com controles de toque e suporte a gestos. A tela inicial apresenta opções claras para fazer login ou se cadastrar. Os campos de entrada são facilmente acessíveis e o sistema de lembrete de usuário é integrado para maior comodidade. No entanto, vale ressaltar que está opção se encontra desabilitada no momento.
+
 PySide6 (QT)
 
 A interface PySide6 é implementada utilizando a biblioteca PySide6, que é uma interface de usuário gráfica em Python baseada na biblioteca Qt. Para executar a interface PySide6, navegue até a pasta ui/qt e execute o seguinte comando:
@@ -88,6 +91,7 @@ A interface PySide6 é implementada utilizando a biblioteca PySide6, que é uma 
 python app.py
 
 A interface PySide6 oferece uma aparência moderna e flexível, seguindo as diretrizes de design do Qt. Ela apresenta uma tela de login e uma tela de cadastro claramente separadas. Os campos de entrada são organizados de maneira elegante e a interface responde bem a diferentes tamanhos de tela.
+
 Tkinter (TK)
 
 A interface Tkinter é construída utilizando a biblioteca Tkinter padrão do Python, que oferece uma maneira simples de criar interfaces gráficas. Para executar a interface Tkinter, navegue até a pasta ui/tk e execute o seguinte comando:
@@ -101,6 +105,7 @@ Os usuários têm a liberdade de escolher a interface gráfica que melhor se ada
 Banco de Dados e Controlador
 
 O sistema de Cadastro e Login de Usuários Multiinterface utiliza um banco de dados SQLite para armazenar informações de usuário, como nome de usuário, email e senha. O arquivo de banco de dados é denominado usuarios.db e está localizado no diretório raiz do projeto. O módulo database.py contém as funcionalidades relacionadas ao banco de dados, como a criação da tabela de usuários, inserção de novos usuários e realização de consultas.
+
 Banco de Dados SQLite
 
 O banco de dados SQLite é uma escolha adequada para um projeto desse tipo, pois é uma solução leve e incorporada que não requer um servidor separado. Ele permite que os dados sejam armazenados de forma estruturada e eficiente, enquanto oferece suporte à linguagem SQL para consultas e manipulações de dados.
@@ -110,12 +115,15 @@ Controlador (controller.py)
 O módulo controller.py atua como um intermediário entre as interfaces gráficas e o banco de dados. Ele fornece uma camada de abstração para o acesso aos dados do banco de dados e implementa as funcionalidades principais do sistema, como cadastro de novos usuários, autenticação de login e lembrança de usuário.
 
 O controlador gerencia a lógica de negócios do sistema, garantindo que as interfaces gráficas estejam desacopladas das operações de banco de dados subjacentes. Ele é responsável por validar os dados inseridos pelo usuário, verificar a autenticidade das credenciais de login e implementar a funcionalidade de lembrar o usuário para uma experiência mais conveniente.
+
 Arquivo Main (main.kv)
 
 O arquivo main.kv é um arquivo de estilo Kivy que define a aparência e o comportamento da interface principal do aplicativo. Ele especifica a estrutura de tela, os elementos de interface e as transições entre as telas. O arquivo é usado pela interface Kivy para renderizar a interface gráfica de acordo com as especificações do arquivo.
+
 Arquivo Main (main.py)
 
 O arquivo __main__.py é o ponto de entrada do projeto e é responsável por iniciar o aplicativo. Ele importa as interfaces gráficas implementadas em cada framework e inicia a interface escolhida pelo usuário. Além disso, ele lida com a seleção e troca de interfaces, permitindo que o usuário escolha entre Kivy, PySide6 e Tkinter.
+
 Dependências do Projeto
 
 Para executar o projeto de Cadastro e Login de Usuários Multiinterface, você precisará das seguintes dependências:
@@ -123,16 +131,18 @@ Para executar o projeto de Cadastro e Login de Usuários Multiinterface, você p
     Python 3.x: A linguagem de programação utilizada no projeto.
     Biblioteca Kivy: Necessária para a execução da interface Kivy.
     Biblioteca PySide6: Necessária para a execução da interface PySide6.
-    Biblioteca Pillow: Utilizada para manipulação de imagens na interface Kivy.
+    Biblioteca Bcrypt: Utilizada para criptografar informações sensiveis dos usuários.
     Biblioteca SQLite3: Incluída na biblioteca padrão do Python, é utilizada para interagir com o banco de dados SQLite.
 
 Para instalar as dependências, você pode usar o gerenciador de pacotes pip. Abra um terminal na raiz do projeto e execute os seguintes comandos:
 
 pip install kivy
 pip install PySide6
-pip install Pillow
+pip install bcrypt
 
-Com essas dependências instaladas, você estará pronto para executar e explorar as diferentes interfaces gráficas do projeto.
+Com essas dependências instaladas, você estará pronto para executar e explorar as diferentes interfaces gráficas do projeto. No entanto, existêm dependências exigidas pelas bibliotecas citadas anteriormente. Neste caso, recomenda-se que você otimize o processo de instalação das dependências usando o arquivo requirements.txt para instalar as dependências previamente registradas no arquivo. Para isso basta executar no terminal o seguinte comando:
+
+pip install requiremetns.txt
 
 Executando o Projeto
 
@@ -142,36 +152,50 @@ cd ui/kv
 python app.py
 
 O aplicativo será iniciado com a interface selecionada e você poderá explorar as funcionalidades de cadastro e login de usuários.
+Para alternar entre as interfaces, utilize os botões ou opções fornecidos na interface gráfica para selecionar a tela desejada.
 
-Para alternar entre as interfaces, utilize os botões ou opções fornecidos na interface gráfica para selecionar a interface desejada.
+Você ainda pode executar o gerenciador de interfaces. Para isso, vá até o diretório raiz do projeto e execute o seguinte comando:
+
+# No Windows
+python __main__.py
+
+# Em distribuições Linux/Mac OS
+python3 __main__.py
+
+Um programa em linha de comando será aberto, e você poderá selecionar uma das 3 pções de interface gráfica através de um dos comandos disponíveis.
 
 A próxima seção explicará os padrões arquiteturais e padrões de projeto utilizados no projeto de Cadastro e Login de Usuários Multiinterface.
 
 Padrões Arquiteturais e Padrões de Projeto
 
 O projeto de Cadastro e Login de Usuários Multiinterface foi desenvolvido seguindo princípios de design e padrões arquiteturais que visam a modularização, reutilização de código e manutenibilidade. Além disso, padrões de projeto foram aplicados para resolver problemas comuns de design e garantir uma estrutura coesa e flexível.
+
 Padrão Arquitetural MVC (Model-View-Controller)
 
 O projeto utiliza o padrão arquitetural MVC para organizar a separação de preocupações em três componentes principais: Model (Modelo), View (Visão) e Controller (Controlador).
 
-    Model (Modelo): Representa a camada de dados e lida com a manipulação e persistência dos dados do sistema. Neste projeto, a classe BancoDeDados do módulo database.py atua como o modelo, lidando com a criação da tabela de usuários, inserção de dados e consultas ao banco de dados.
+    Model (Modelo): Representa a camada de dados e lida com a manipulação e persistência dos dados do sistema. Neste projeto, a classe BancoDeDados do módulo database.py atua como o modelo, lidando com: a criação da tabela de usuários; a tabela de usuários relembrados para cada interface; persistÇencia dos dados e consultas ao banco de dados.
 
     View (Visão): Representa a camada de interface gráfica que interage com o usuário. As interfaces Kivy, PySide6 e Tkinter implementam a camada de visualização, apresentando formulários de cadastro, login e elementos de interação para o usuário.
 
-    Controller (Controlador): Atua como intermediário entre o modelo e a visão, gerenciando a lógica de negócios e as operações do sistema. O módulo controller.py implementa o controlador, garantindo que as interfaces gráficas estejam desacopladas das operações de banco de dados.
+    Controller (Controlador): Atua como intermediário entre o modelo e a visão, gerenciando a lógica de negócios e as operações do sistema. O módulo controller.py implementa o controlador, garantindo que as interfaces gráficas estejam desacopladas das operações de banco de dados. O Controlador do projeto ainda lida com as rotinas de requisição dos dados do Modelo, realizando tarefas como a criação de novos usuários e registrando usuários á serem relembrados para login no sistema.
 
 Padrões de Projeto Utilizados
 
 Além do padrão arquitetural MVC, alguns padrões de projeto foram utilizados para garantir a modularização, reutilização e manutenibilidade do código.
+
 Factory Method (Método de Fábrica)
 
 O padrão Factory Method foi utilizado para criar instâncias de interfaces gráficas sem especificar explicitamente a classe concreta. Isso permite que o código cliente (no arquivo __main__.py) crie instâncias das interfaces de acordo com a escolha do usuário, sem depender diretamente das implementações específicas.
+
 Singleton
 
 O padrão Singleton foi aplicado para garantir que apenas uma única instância da classe BancoDeDados (modelo) seja criada e utilizada em todo o sistema. Isso evita problemas de concorrência e garante que todos os componentes do sistema acessem os mesmos dados.
+
 Strategy (Estratégia)
 
 O padrão Strategy foi utilizado para implementar diferentes estratégias de lembrança de usuário. Cada interface gráfica tem sua própria implementação de lembrança, que é selecionada com base na interface escolhida pelo usuário. Isso permite a adição fácil de novas estratégias de lembrança no futuro.
+
 Outros Padrões
 
 Além dos padrões mencionados, o código do projeto adere a boas práticas de programação, como encapsulamento, coesão e baixo acoplamento entre os componentes. Esses princípios contribuem para um código mais legível, organizado e facilmente manutenível.
@@ -216,35 +240,10 @@ Na pasta ui/tk, os módulos app.py, login.py, register.py e tk_utils.py implemen
 Banco de Dados e Controlador
 
 O projeto utiliza um banco de dados SQLite para armazenar informações de usuário. A classe BancoDeDados no módulo database.py é responsável pela criação da tabela de usuários, inserção de novos registros e consultas ao banco de dados. O controlador, implementado no módulo controller.py, gerencia a lógica de negócios e a interação entre as interfaces gráficas e o banco de dados.
+
 Arquivo __main__.py
 
-O arquivo __main__.py é o ponto de entrada do programa. Ele cria uma instância da classe GerenciadorDeInterface e inicia a interface gráfica. O usuário é apresentado a um menu onde pode escolher qual interface deseja usar: Kivy, PySide6 ou Tkinter. Com base na escolha do usuário, a instância apropriada da interface é criada e exibida.
-Dependências do Projeto
-
-Para executar o projeto, certifique-se de ter as seguintes dependências instaladas:
-
-    Python 3.x
-    Kivy (versão compatível com o Python 3.x)
-    PySide6
-    Tkinter (geralmente incluído na instalação padrão do Python)
-
-Você pode instalar as dependências usando o pip, o gerenciador de pacotes do Python. Abra um terminal e execute os seguintes comandos:
-
-pip install kivy
-pip install PySide6
-
-Certifique-se de estar em um ambiente virtual ou usar permissões adequadas para evitar conflitos com outras instalações Python.
-Executando o Projeto
-
-Após instalar as dependências, você pode executar o projeto abrindo um terminal na pasta raiz do projeto e executando o seguinte comando:
-
-# No Windows
-python __main__.py
-
-# Em distribuições Linux/Mac OS
-python3 __main__.py
-
-Isso iniciará o programa e apresentará um menu para que você possa escolher a interface desejada.
+O arquivo __main__.py é o ponto de entrada do programa. O usuário é apresentado a um menu onde pode escolher qual interface deseja usar: Kivy, PySide6 ou Tkinter. Com base na escolha do usuário, a instância apropriada da interface é criada e exibida.
 
 Conclusão
 
@@ -300,8 +299,6 @@ Próximas Etapas
 
 A documentação até este ponto cobre as principais funcionalidades do projeto, incluindo as três interfaces gráficas, o banco de dados e o controlador. A próxima seção abordará mais detalhadamente o arquivo __main__.py e como ele orquestra as diferentes interfaces para criar uma experiência de usuário flexível e amigável.
 
-A próxima seção explicará a estrutura e a funcionalidade do arquivo __main__.py, que é o ponto de entrada do programa e coordena a exibição das diferentes interfaces gráficas.
-
 Arquivo __main__.py e Interface de Seleção
 
 O arquivo __main__.py desempenha um papel central no projeto, servindo como ponto de entrada e controlador principal do programa. Ele é responsável por criar e gerenciar a interface de seleção de framework, permitindo que o usuário escolha qual interface gráfica deseja usar para o cadastro e login de usuários.
@@ -327,4 +324,4 @@ O arquivo __main__.py é um elemento essencial do projeto, permitindo a escolha 
 
 Considerações do Autor
 
-Iniciei este projeto com o intuito de integrar em meu portfólio um software que englobasse algumas das principais práticas de programação e conhecimentos necessários para a criação de um software do tipo CRUD (Create, Read, Update, Delete). Por se tratar de uma pequena aplicação de estudo, comecei a escrever o código de maneira despretenciosa, ignorando a convenção de utilizar nomes em inglês para as variáveis e componentes do programa. Apesar de não ser uma boa prática, decidi manter o código assim, pois creio que isso facilitará o aprendizado de iniciantes em programação que sejam falantes do português (como eu). O programa não possui uma finalidade objetiva para usuários comuns, por isso, não me preocupei em desenvolver interfaces com apelo visual. Sua estrutura modular o torna um bom ponto de partida para ser usado como template em projetos maiores por outros desenvolvedores (eu certamente irei reaproveitá-lo em projetos futuros). Desenvolver um sistema completo de autenticação de usuários pode ser mais complexo do que parece! Inicialmente, a proposta do projeto era ser apenas um sistema de CRUD comum, com uma interface gráfica simples desenvolvida em Tkinter com acesso a um banco de dados. Mas como ainda não tinha nenhum exemplo de programas desenvolvidos com os outros dois frameworks (PySide6, Kivy), achei que seria interessante e desafiador desenvolver uma aplicação que integrasse três interfaces diferentes á um mesmo banco de dados. No decorrer do desenvolvimento, o projeto acabou se expandindo, quando me dei conta, estava aprendendo sobre criptografia e princípios de segurança indispensáveis para qualquer sistema informatizado. Sinta-se á vontade para clonar este repositório e reaproveitar seu conteúdo. O sistema não está completo,o CheckBox "Lembrar de mim" da tela do Kivy ainda não foi implementado, se você mantê-lo marcado ao tentar fazer login, verá que uma caixa de diálogo informativa alertará que a funcionalidade está desabilitada. Para tornar o projeto mais relevante e completo, seria interessante a criação de um sistema de envio de e-mails para ativação das contas e uma opção para alterar senhas esquecidas. Se você tiver conhecimentos em alguma das técnologias utilizadas para implementar este sistema e gostaria de contribuir com o projeto, entre em contato comigo pelo meu e-mail luizrdererita@gmail.com.
+Iniciei este projeto com o intuito de integrar em meu portfólio um software que englobasse algumas das principais práticas de programação e conhecimentos necessários para a criação de um software do tipo CRUD (Create, Read, Update, Delete). Por se tratar de uma pequena aplicação de estudo, comecei a escrever o código de maneira despretenciosa, ignorando a convenção de utilizar nomes em inglês para as variáveis e componentes do programa. Apesar de não ser uma boa prática, decidi manter o código assim, pois creio que isso facilitará o aprendizado de iniciantes em programação que sejam falantes do português (como eu). O programa não possui uma finalidade objetiva para usuários comuns, por isso, não me preocupei em desenvolver interfaces com apelo visual. Sua estrutura modular o torna um bom ponto de partida para ser usado como template em projetos maiores por outros desenvolvedores (eu certamente irei reaproveitá-lo em projetos futuros). Desenvolver um sistema completo de autenticação de usuários pode ser mais complexo do que parece! Inicialmente, a proposta do projeto era ser apenas um sistema de CRUD comum, com uma interface gráfica simples desenvolvida em Tkinter com acesso a um banco de dados. Mas como ainda não tinha nenhum exemplo de programas desenvolvidos com os outros dois frameworks (PySide6, Kivy), achei que seria interessante e desafiador desenvolver uma aplicação que integrasse três interfaces diferentes á um mesmo banco de dados. No decorrer do desenvolvimento, o projeto acabou se expandindo, quando me dei conta, estava aprendendo sobre criptografia e princípios de segurança indispensáveis para qualquer sistema informatizado. Sinta-se á vontade para clonar este repositório e reaproveitar seu conteúdo. O sistema não está completo, o CheckBox "Lembrar de mim" da tela do Kivy ainda não foi implementado, se você mantê-lo marcado ao tentar fazer login, verá que uma caixa de diálogo informativa alertará que a funcionalidade está desabilitada. Para tornar o projeto mais relevante e completo, seria interessante a criação de um sistema de envio de e-mails para ativação das contas e uma opção para alterar senhas esquecidas. Se você tiver conhecimentos em alguma das técnologias utilizadas para implementar este sistema e gostaria de contribuir com o projeto, entre em contato comigo pelo meu e-mail luizrdererita@gmail.com.
