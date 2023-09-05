@@ -6,26 +6,26 @@
 
 O projeto está organizado da seguinte forma:
 
-    - cadastro_login: Pasta raiz do projeto.
-        - ui: Pasta contendo os módulos relacionados à interface do usuário.
-            - kv: Pasta com o módulo de interface gráfica utilizando Kivy.
-                - app.py: Módulo principal da interface Kivy.
-            - qt: Pasta com o módulo de interface gráfica utilizando PySide6.
-                - app.py: Módulo principal da interface PySide6.
-                - screens.py: Módulo com definições das telas da interface PySide6.
-            - tk: Pasta com o módulo de interface gráfica utilizando Tkinter.
-                - app.py: Módulo principal da interface Tkinter.
-                - login.py: Módulo com a tela de login Tkinter.
-                - register.py: Módulo com a tela de cadastro Tkinter.
-                - tk_utils.py: Módulo com funções utilitárias para a interface Tkinter.
-        - __main__.py: Ponto de entrada principal do programa.
-        - .gitignore: Arquivo de configuração do Git para ignorar arquivos específicos.
-        - constants.py: Arquivo com constantes utilizadas no projeto.
-        - controller.py: Módulo que contém a lógica de controle do programa.
-        - database.py: Módulo para interação com o banco de dados SQLite.
-        - main.kv: Arquivo de layout Kivy utilizado pela interface Kivy.
-        - usuarios.db: Arquivo do banco de dados SQLite contendo os dados dos usuários.
-        - utils.py: Módulo com funções utilitárias genéricas.
+- cadastro_login: Pasta raiz do projeto.
+    - ui: Pasta contendo os módulos relacionados à interface do usuário.
+        - kv: Pasta com o módulo de interface gráfica utilizando Kivy.
+            - app.py: Módulo principal da interface Kivy.
+        - qt: Pasta com o módulo de interface gráfica utilizando PySide6.
+            - app.py: Módulo principal da interface PySide6.
+            - screens.py: Módulo com definições das telas da interface PySide6.
+        - tk: Pasta com o módulo de interface gráfica utilizando Tkinter.
+            - app.py: Módulo principal da interface Tkinter.
+            - login.py: Módulo com a tela de login Tkinter.
+            - register.py: Módulo com a tela de cadastro Tkinter.
+            - tk_utils.py: Módulo com funções utilitárias para a interface Tkinter.
+    - __main__.py: Ponto de entrada principal do programa.
+    - .gitignore: Arquivo de configuração do Git para ignorar arquivos específicos.
+    - constants.py: Arquivo com constantes utilizadas no projeto.
+    - controller.py: Módulo que contém a lógica de controle do programa.
+    - database.py: Módulo para interação com o banco de dados SQLite.
+    - main.kv: Arquivo de layout Kivy utilizado pela interface Kivy.
+    - usuarios.db: Arquivo do banco de dados SQLite contendo os dados dos usuários.
+    - utils.py: Módulo com funções utilitárias genéricas.
 
 ## Estrutura e Funcionalidade
 
@@ -49,17 +49,17 @@ O projeto está organizado da seguinte forma:
 
 O projeto oferece três interfaces gráficas diferentes para os usuários escolherem:
 
-    1. **Kivy Interface (ui/kv/app.py):** Utiliza o framework **Kivy** para criar uma interface gráfica moderna e interativa. As telas são definidas no arquivo *main.kv*.
+1. **Kivy Interface (ui/kv/app.py):** Utiliza o framework **Kivy** para criar uma interface gráfica moderna e interativa. As telas são definidas no arquivo *main.kv*.
 
-    2. **PySide6 Interface (ui/qt/app.py):** Utiliza o framework **PySide6** para criar uma interface gráfica baseada em widgets. As telas são definidas no módulo *screens.py*.
+2. **PySide6 Interface (ui/qt/app.py):** Utiliza o framework **PySide6** para criar uma interface gráfica baseada em widgets. As telas são definidas no módulo *screens.py*.
 
-    3. **Tkinter Interface (ui/tk/app.py):** Utiliza o framework **Tkinter** para criar uma interface gráfica clássica. As telas de login e cadastro são definidas nos módulos *login.py* e *register.py*.
+3. **Tkinter Interface (ui/tk/app.py):** Utiliza o framework **Tkinter** para criar uma interface gráfica clássica. As telas de login e cadastro são definidas nos módulos *login.py* e *register.py*.
 
 ### Kivy (KV)
 
 	A interface **Kivy** é construída utilizando a biblioteca **Kivy**, que é uma estrutura de desenvolvimento de aplicativos **Python** de código aberto para criar interfaces de usuário multitouch. Para executar a interface **Kivy**, navegue até a pasta *ui/kv* e execute o seguinte comando:
 
-	'python app.py'
+'python app.py'
 
 	A interface **Kivy** oferece uma experiência moderna e intuitiva, com controles de toque e suporte a gestos. A tela inicial apresenta opções claras para fazer login ou se cadastrar. Os campos de entrada são facilmente acessíveis e o sistema de lembrete de usuário é integrado para maior comodidade. No entanto, vale ressaltar que está opção se encontra desabilitada no momento.
 
@@ -67,7 +67,7 @@ O projeto oferece três interfaces gráficas diferentes para os usuários escolh
 
 	A interface **PySide6** é implementada utilizando a biblioteca **PySide6**, que é uma interface de usuário gráfica em **Python** baseada na biblioteca **Qt**. Para executar a interface **PySide6**, navegue até a pasta *ui/qt* e execute o seguinte comando:
 
-	'python app.py'
+'python app.py'
 
 	A interface **PySide6** oferece uma aparência moderna e flexível, seguindo as diretrizes de design do **Qt**. Ela apresenta uma tela de login e uma tela de cadastro claramente separadas. Os campos de entrada são organizados de maneira elegante e a interface responde bem a diferentes tamanhos de tela.
 
@@ -75,7 +75,7 @@ O projeto oferece três interfaces gráficas diferentes para os usuários escolh
 
 	A interface **Tkinter** é construída utilizando a biblioteca **Tkinter** padrão do **Python**, que oferece uma maneira simples de criar interfaces gráficas. Para executar a interface **Tkinter**, navegue até a pasta *ui/tk* e execute o seguinte comando:
 
-	'python app.py'
+'python app.py'
 
 	A interface **Tkinter** apresenta uma abordagem tradicional de interface gráfica com campos de entrada e botões em um layout organizado. A tela de login e a tela de cadastro são facilmente acessíveis, e a interface se integra bem com o ambiente desktop padrão.
 
@@ -89,12 +89,12 @@ O projeto oferece três interfaces gráficas diferentes para os usuários escolh
 
 O módulo *app.py* na pasta *ui/kv* implementa a interface gráfica **Kivy**. O Kivy é um framework de interface de usuário de código aberto e multiplataforma, adequado para a criação de aplicativos móveis e de desktop com uma interface atraente e responsiva. A interface **Kivy** possui as seguintes funcionalidades:
 
-    - **Tela de Cadastro:**
-    	Permite aos usuários inserir um nome de usuário, e-mail e senha para criar uma nova conta no sistema.
-    - **Tela de Login:**
-    	Oferece a opção de fazer login com nome de usuário ou e-mail, juntamente com a senha correspondente.
-    - **Opção "Lembrar de Mim":**
-    	Os usuários podem optar por lembrar suas credenciais para facilitar o acesso posterior.
+- **Tela de Cadastro:**
+  Permite aos usuários inserir um nome de usuário, e-mail e senha para criar uma nova conta no sistema.
+- **Tela de Login:**
+  Oferece a opção de fazer login com nome de usuário ou e-mail, juntamente com a senha correspondente.
+- **Opção "Lembrar de Mim":**
+  Os usuários podem optar por lembrar suas credenciais para facilitar o acesso posterior.
 
 	O arquivo *main.kv* é um arquivo de estilo Kivy que define a aparência e o comportamento da interface principal do aplicativo. Ele especifica a estrutura de tela, os elementos de interface e as transições entre as telas. O arquivo é usado pela interface **Kivy** para renderizar a interface gráfica de acordo com as especificações do arquivo.
 
@@ -102,30 +102,30 @@ O módulo *app.py* na pasta *ui/kv* implementa a interface gráfica **Kivy**. O 
 
 	A pasta *ui/qt* contém os módulos *app.py* e *screens.py*, que implementam a interface gráfica **PySide6**. O **PySide6** é uma biblioteca que permite a criação de interfaces gráficas usando o toolkit **Qt**. A interface **PySide6** possui funcionalidades semelhantes às do **Kivy**:
 
-    - **Tela de Cadastro:**
-    	Os usuários podem fornecer um nome de usuário, e-mail e senha para se cadastrar no sistema.
-    - **Tela de Login:**
-    	Os usuários podem fazer login usando nome de usuário ou e-mail e inserindo a senha correspondente.
-    - **Opção "Lembrar de Mim":**
-    	Os usuários podem optar por lembrar suas credenciais para uma experiência de login mais rápida.
+- **Tela de Cadastro:**
+  Os usuários podem fornecer um nome de usuário, e-mail e senha para se cadastrar no sistema.
+- **Tela de Login:**
+  Os usuários podem fazer login usando nome de usuário ou e-mail e inserindo a senha correspondente.
+- **Opção "Lembrar de Mim":**
+  Os usuários podem optar por lembrar suas credenciais para uma experiência de login mais rápida.
 
 ### Tkinter (TK)
 
 	Na pasta *ui/tk*, os módulos *app.py*, *login.py*, *register.py* e *tk_utils.py* implementam a interface gráfica **Tkinter**. O **Tkinter** é um framework de interface gráfica padrão para o **Python** e é amplamente utilizado para criar aplicativos de desktop. A interface **Tkinter** oferece funcionalidades semelhantes às outras interfaces:
 
-    - **Tela de Cadastro:**
-    	Permite aos usuários inserir um nome de usuário, e-mail e senha para se cadastrar no sistema.
-    - **Tela de Login:**
-    	Oferece a opção de fazer login com nome de usuário ou e-mail, juntamente com a senha correspondente.
-    - **Opção "Lembrar de Mim":**
-    	Os usuários podem optar por lembrar suas credenciais para facilitar o acesso posterior.
+- **Tela de Cadastro:**
+  Permite aos usuários inserir um nome de usuário, e-mail e senha para se cadastrar no sistema.
+- **Tela de Login:**
+  Oferece a opção de fazer login com nome de usuário ou e-mail, juntamente com a senha correspondente.
+- **Opção "Lembrar de Mim":**
+  Os usuários podem optar por lembrar suas credenciais para facilitar o acesso posterior.
 
 ## Funcionalidades Principais
     
-    - **Cadastro de novos usuários com validação de dados**
-    - **Login de usuários existentes com autenticação segura**
-    - **Compartilhamento de banco de dados entre todas as interfaces**
-    - **Opção de lembrar de usuários para facilitar o login**
+- **Cadastro de novos usuários com validação de dados**
+- **Login de usuários existentes com autenticação segura**
+- **Compartilhamento de banco de dados entre todas as interfaces**
+- **Opção de lembrar de usuários para facilitar o login**
 
 ## Padrões Arquiteturais e de Projeto
 
@@ -135,7 +135,7 @@ O módulo *app.py* na pasta *ui/kv* implementa a interface gráfica **Kivy**. O 
 
 	O projeto requer **Python 3.x** e as bibliotecas especificadas no arquivo *requirements.txt*. Para executar o projeto, execute o seguinte comando:
 
-	'python -m cadastro_login'
+`python -m cadastro_login`
 
 ## Dependências do Projeto
 
@@ -145,7 +145,7 @@ O módulo *app.py* na pasta *ui/kv* implementa a interface gráfica **Kivy**. O 
 
 	Abra um terminal e navegue até a pasta raiz do projeto *cadastro_login*, onde o arquivo *requirements.txt* está localizado. Em seguida, execute o seguinte comando para instalar as dependências:
 
-	'pip install -r requirements.txt'
+`pip install -r requirements.txt`
 
 	Isso instalará as bibliotecas necessárias para cada uma das interfaces gráficas, bem como quaisquer outras dependências do projeto. Certifique-se de ter um ambiente virtual configurado, se desejar isolar as dependências do projeto das demais bibliotecas do Python em seu sistema. Depois de instalar as dependências, você estará pronto para executar o projeto em qualquer uma das interfaces disponíveis.
 
@@ -165,24 +165,28 @@ O módulo *app.py* na pasta *ui/kv* implementa a interface gráfica **Kivy**. O 
 
 O controlador oferece os seguintes métodos:
 
-    - **cadastrar_usuario(nome_usuario, email, senha):**
-    	Recebe os dados de um novo usuário e os passa para o banco de dados para inserção.
+- **cadastrar_usuario(nome_usuario, email, senha):**
+  Recebe os dados de um novo usuário e os passa para o banco de dados para inserção.
 
-    - **fazer_login(nome_usuario_email, senha):**
-    	Recebe as credenciais de login, verifica sua validade por meio do banco de dados e retorna *True* se o login for bem-sucedido.
+- **fazer_login(nome_usuario_email, senha):**
+  Recebe as credenciais de login, verifica sua validade por meio do banco de dados e retorna *True* se o login for bem-sucedido.
 
-    - **verificar_existencia_nome_usuario(nome_usuario):**
-    	Verifica se um nome de usuário já está em uso no banco de dados.
+- **verificar_existencia_nome_usuario(nome_usuario):**
+  Verifica se um nome de usuário já está em uso no banco de dados.
 
-    - **verificar_existencia_email(email):**
-    	Verifica se um endereço de e-mail já está em uso no banco de dados.
+- **verificar_existencia_email(email):**
+  Verifica se um endereço de e-mail já está em uso no banco de dados.
 
 ## Executando o Projeto
 
 	Navegue até o diretório da interface desejada (kv, qt ou tk) e execute o arquivo *app.py* correspondente. Por exemplo, para executar a interface **Kivy**:
 
-	'''cd ui/kv
-	python app.py'''
+```python
+
+cd ui/kv
+python app.py
+
+```
 
 	O aplicativo será iniciado com a interface selecionada e você poderá explorar as funcionalidades de cadastro e login de usuários.
 Para alternar entre as interfaces, utilize os botões ou opções fornecidos na interface gráfica para selecionar a tela desejada.
@@ -194,10 +198,10 @@ O arquivo *__main__.py* é o ponto de entrada do projeto e é responsável por i
 Você ainda pode executar o gerenciador de interfaces. Para isso, vá até o diretório raiz do projeto e execute o seguinte comando:
 
 #### No Windows:
-	'python __main__.py'
+`python __main__.py`
 
 #### Em distribuições Linux/Mac OS:
-	'python3 __main__.py'
+`python3 __main__.py`
 
 	Um programa em linha de comando será aberto, e você poderá selecionar uma das 3 pções de interface gráfica através de um dos comandos disponíveis.
 
@@ -209,24 +213,27 @@ Você ainda pode executar o gerenciador de interfaces. Para isso, vá até o dir
 
 	O projeto utiliza o padrão arquitetural **MVC** para organizar a separação de preocupações em três componentes principais: **Model (Modelo)**, **View (Visão)** e **Controller (Controlador)**.
 
-    - **Model (Modelo):** Representa a camada de dados e lida com a manipulação e persistência dos dados do sistema. Neste projeto, a classe *BancoDeDados* do módulo *database.py* atua como o modelo, lidando com: a criação da tabela de usuários; a tabela de usuários relembrados para cada interface; persistÇencia dos dados e consultas ao banco de dados.
+- **Model (Modelo):**
+	Representa a camada de dados e lida com a manipulação e persistência dos dados do sistema. Neste projeto, a classe *BancoDeDados* do módulo *database.py* atua como o modelo, lidando com: a criação da tabela de usuários; a tabela de usuários relembrados para cada interface; persistÇencia dos dados e consultas ao banco de dados.
 
-    - **View (Visão):** Representa a camada de interface gráfica que interage com o usuário. As interfaces **Kivy**, **PySide6** e **Tkinter** implementam a camada de visualização, apresentando formulários de cadastro, login e elementos de interação para o usuário.
+- **View (Visão):**
+	Representa a camada de interface gráfica que interage com o usuário. As interfaces **Kivy**, **PySide6** e **Tkinter** implementam a camada de visualização, apresentando formulários de cadastro, login e elementos de interação para o usuário.
 
-    - **Controller (Controlador):** Atua como intermediário entre o modelo e a visão, gerenciando a lógica de negócios e as operações do sistema. O módulo *controller.py* implementa o controlador, garantindo que as interfaces gráficas estejam desacopladas das operações de banco de dados. O controlador do projeto ainda lida com as rotinas de requisição dos dados do Modelo, realizando tarefas como a criação de novos usuários e registrando usuários á serem relembrados para login no sistema.
+- **Controller (Controlador):**
+	Atua como intermediário entre o modelo e a visão, gerenciando a lógica de negócios e as operações do sistema. O módulo *controller.py* implementa o controlador, garantindo que as interfaces gráficas estejam desacopladas das operações de banco de dados. O controlador do projeto ainda lida com as rotinas de requisição dos dados do Modelo, realizando tarefas como a criação de novos usuários e registrando usuários á serem relembrados para login no sistema.
 
 ### Padrões de Projeto Utilizados
 
 	Além do padrão arquitetural **MVC**, alguns padrões de projeto foram utilizados para garantir a modularização, reutilização e manutenibilidade do código.
 
-	- **Factory Method (Método de Fábrica):**
-		O padrão Factory Method foi utilizado para criar instâncias de interfaces gráficas sem especificar explicitamente a classe concreta. Isso permite que o código cliente (no arquivo *__main__.py*) crie instâncias das interfaces de acordo com a escolha do usuário, sem depender diretamente das implementações específicas.
+- **Factory Method (Método de Fábrica):**
+	O padrão Factory Method foi utilizado para criar instâncias de interfaces gráficas sem especificar explicitamente a classe concreta. Isso permite que o código cliente (no arquivo *__main__.py*) crie instâncias das interfaces de acordo com a escolha do usuário, sem depender diretamente das implementações específicas.
 
-	- **Singleton:**
-		O padrão **Singleton** foi aplicado para garantir que apenas uma única instância da classe *BancoDeDados* (modelo) seja criada e utilizada em todo o sistema. Isso evita problemas de concorrência e garante que todos os componentes do sistema acessem os mesmos dados.
+- **Singleton:**
+	O padrão **Singleton** foi aplicado para garantir que apenas uma única instância da classe *BancoDeDados* (modelo) seja criada e utilizada em todo o sistema. Isso evita problemas de concorrência e garante que todos os componentes do sistema acessem os mesmos dados.
 
-	- **Strategy (Estratégia):**
-		O padrão *Strategy* foi utilizado para implementar diferentes estratégias de lembrança de usuário. Cada interface gráfica tem sua própria implementação de lembrança, que é selecionada com base na interface escolhida pelo usuário. Isso permite a adição fácil de novas estratégias de lembrança no futuro.
+- **Strategy (Estratégia):**
+	O padrão *Strategy* foi utilizado para implementar diferentes estratégias de lembrança de usuário. Cada interface gráfica tem sua própria implementação de lembrança, que é selecionada com base na interface escolhida pelo usuário. Isso permite a adição fácil de novas estratégias de lembrança no futuro.
 
 ### Outros Padrões
 
@@ -257,20 +264,20 @@ A estrutura da tabela é a seguinte:
 
 	O módulo *database.py* contém a classe *BancoDeDados*, que encapsula as operações de banco de dados necessárias para o funcionamento do sistema:
 
-    - **criar_tabela_usuarios():**
-    	Cria a tabela usuarios se ainda não existir.
+- **criar_tabela_usuarios():**
+	Cria a tabela usuarios se ainda não existir.
 
-    - **inserir_usuario(nome_usuario, email, senha):**
-    	Insere um novo usuário na tabela, fornecendo um nome de usuário, e-mail e senha. A senha é armazenada de forma criptografada.
+- **inserir_usuario(nome_usuario, email, senha):**
+   	Insere um novo usuário na tabela, fornecendo um nome de usuário, e-mail e senha. A senha é armazenada de forma criptografada.
 
-    - **obter_usuario_por_nome(nome_usuario):**
-    	Retorna um usuário com base no nome de usuário fornecido.
+- **obter_usuario_por_nome(nome_usuario):**
+    Retorna um usuário com base no nome de usuário fornecido.
 
-    - **obter_usuario_por_email(email):**
-    	Retorna um usuário com base no endereço de e-mail fornecido.
+- **obter_usuario_por_email(email):**
+   	Retorna um usuário com base no endereço de e-mail fornecido.
 
-    - **fazer_login(nome_usuario_email, senha):**
-    	Verifica as credenciais de login (nome de usuário ou e-mail e senha) e retorna True se as credenciais forem válidas.
+- **fazer_login(nome_usuario_email, senha):**
+    Verifica as credenciais de login (nome de usuário ou e-mail e senha) e retorna True se as credenciais forem válidas.
 
 ## Conclusão
 
